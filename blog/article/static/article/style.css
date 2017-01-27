@@ -1,0 +1,73 @@
+body{
+background-color: #E4EBED;
+font-family: Open Sans, Verdana;
+color: rgb(80,80,80);
+margin-top: 80px;
+}
+
+.form-control{
+border-radius: 0;
+}
+
+.navbar-default{
+background-color: rgba(255,255,255,.95);
+border-bottom-color: #C5D8DE;
+}
+
+
+.navbar-default .navbar-nav > .active > a
+{
+background-color: transparent;
+font-weight: bold;
+color: #000;
+}
+
+.navbar-default .navbar-nav > .active > a:hover
+{
+background-color: transparent;
+color: blue;
+}
+
+small{
+color: rgb(120,120,120);
+}
+
+hr{
+color: rgb(50,50,50);
+}
+h3{
+padding-top:0;
+margin-top: 2;
+}
+.shoe{
+background-color: #fff;
+border: 2px solid transparent;
+padding: 20px;
+margin-bottom: 40px;
+}
+.shoe:hover{
+border: 2px solid rgba(110,110,110,.82);
+}
+.shoe_det{
+background-color: #fff;
+border: 2px solid rgba(0,0,190,.2);
+padding: 30px;
+margin-bottom: 40px;
+}
+.price{
+font-weight:bold;
+color: black;
+}
+.center-cropped {
+  width: 520px;
+  height: 320px;
+  background-color: #fff;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+a.shoe{
+text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+}

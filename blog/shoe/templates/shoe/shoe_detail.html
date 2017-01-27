@@ -1,0 +1,40 @@
+{% extends "../article/base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="row">
+ <div class="col-md-2">
+
+
+ </div>
+      <div class="col-md-8">
+
+<button class="btn btn-default" type="submit" onclick="javascript:window.history.back()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> &nbsp; BACK</button>
+
+<br><br>
+
+<div  class="shoe_det">
+<h1>
+        {{ instance.brand }} <span class="pull-right price" style="font-size:36px">€ {{ instance.price }}</span>
+    </h1>
+     <h4>{{ instance.type }}</h4><br>
+
+
+    <img src="{% static '/article/img/' %}{{ instance.brand }}.jpg" style="max-height:50px"><br><br>
+
+    <b>Size:</b> {{ instance.size }}<br><br> {{ instance.description }}
+    <br>
+
+{% if instance.image %}
+<div class="center-cropped"
+     style="background-image: url('{{ instance.image.url }}');">
+</div>
+        {% endif %}
+
+</div>
+
+      </div>
+      <div class="col-md-2"></div>
+
+</div>
+{% endblock content %}

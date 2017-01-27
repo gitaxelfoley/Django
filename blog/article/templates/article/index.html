@@ -1,0 +1,12 @@
+<html>
+<body>
+{{ Title }} is working <br><br>
+
+{% for obj in object_list %}
+
+<a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a> <br>
+{{ obj.content }} <br><br>
+
+{% endfor %}
+</body>
+</html>

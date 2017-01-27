@@ -1,0 +1,58 @@
+{% extends "article/base.html" %}
+
+{% block head_title %}
+{{ instance.title}} | {{ block.super }}
+{% endblock head_title %}
+
+{% block content %}
+
+
+<h1>{{ instance.title }} </h1>
+
+<div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+
+&nbsp;&nbsp;&nbsp;&nbsp; by {{ instance.user }} &nbsp;&nbsp;&nbsp;&nbsp;
+<small><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{ instance.publish }}</small> &nbsp;&nbsp;&nbsp;&nbsp;
+
+{% if instance.draft %}<span class="label label-danger">Draft</span>{% endif %} {% if instance.publish > today %}<span class="label label-info">Future</span>{% endif %}
+
+<br>
+<br><br>
+
+
+<div class="row">
+  <div class="col-md-8">
+{% if instance.image %}
+    <img src="{{ instance.image.url }}" class="img-responsive" style="">
+    {% endif %}
+
+ </div>
+  <div class="col-md-4">
+
+  </div>
+</div>
+
+
+
+<br><br><br>
+
+<div class="row">
+  <div class="col-md-8">
+
+{{ instance.content | linebreaks }}
+
+ </div>
+  <div class="col-md-4">
+
+
+
+
+  </div>
+</div>
+<br><br>
+
+
+
+
+<div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="3"></div>
+{% endblock content %}

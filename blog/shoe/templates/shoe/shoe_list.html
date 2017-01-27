@@ -1,0 +1,51 @@
+{% extends "../article/base.html" %}
+
+
+{% block content %}
+
+
+<br><br>
+<div class="row">
+
+   {% for obj in instance %}
+
+    <div class="col-md-4">
+        <a href="/shoe/{{ obj.id }}">
+        <div class="shoe">
+        <h3>
+        {{ obj.brand }} <span class="pull-right price">EUR {{ obj.price }}</span>
+        </h3>
+        {{ obj.type }}
+    <br>
+    {% if obj.image %}
+        <a href="/shoe/{{ obj.id }}"><img src="{{ obj.image.url }}" class="img-responsive center" style="max-height:320px;display:block;
+  margin-left:auto;
+  margin-right:auto; "></a>
+        {% endif %}
+    </div></a>
+    </div>
+    {% if forloop.counter == 3 or forloop.counter == 6  %}
+    </div><div class="row">
+    {% endif %}
+
+ {% endfor %}
+
+    </div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if instance.has_previous %}
+            <a href="?page={{ instance.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ instance.number }} of {{ instance.paginator.num_pages }}
+        </span>
+
+        {% if instance.has_next %}
+            <a href="?page={{ instance.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">next</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock content %}
